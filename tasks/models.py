@@ -18,6 +18,7 @@ class Task(models.Model):
         choices=STATUS_CHOICES,
         default=STATUS_PENDING
     )
+    due_date = models.DateField(blank=True, null=True)  # NEW: optional due date
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
