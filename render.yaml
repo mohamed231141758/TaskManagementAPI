@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: task-management-api
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn task_manager.wsgi:application"
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
